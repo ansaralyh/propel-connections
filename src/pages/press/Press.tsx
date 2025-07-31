@@ -469,7 +469,7 @@
        </div>
 
        {/* Seventh Section - Call to Action */}
-       <div className="bg-gradient-to-r from-[#3FF3FC] to-[#256CF9] py-20 px-4 rounded-tl-[181px] rounded-br-[181px]">
+       <div className="bg-gradient-to-r from-[#3FF3FC] to-[#256CF9] py-20 px-[200px] rounded-tl-[181px] rounded-br-[181px]">
          <div className="max-w-4xl mx-auto text-center">
            <h2 className="text-5xl font-bold text-black mb-6">Ready to Get Started</h2>
            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
