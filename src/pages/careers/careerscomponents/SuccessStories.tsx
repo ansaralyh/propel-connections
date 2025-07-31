@@ -7,7 +7,7 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur. Consequat magna sit amet vitae dolor blandit. Elit enim massa etiam neque laoreet lorem sed.",
     author: "John Wilson",
     role: "Business Owner",
-    image: "/assets/man.jpeg",
+    image: "/public/assets/men.jpeg",
     bgColor: "bg-blue-600",
     textColor: "text-white",
   },
@@ -17,7 +17,7 @@ const testimonials = [
     text: "Lorem ipsum dolor sit amet consectetur. Consequat magna sit amet vitae dolor blandit. Elit enim massa etiam neque laoreet lorem sed.",
     author: "Sarah Johnson",
     role: "Entrepreneur",
-    image: "/assets/women.jpeg",
+    image: "/public/assets/women.jpeg",
     bgColor: "bg-cyan-400",
     textColor: "text-white",
     subtitle: "What are they say",
@@ -82,19 +82,18 @@ export default function SuccessStories() {
                 </div>
 
                 {/* Right Image Side */}
-                <div className="w-64 relative bg-gray-100">
+                <div className="w-64 relative bg-black">
                   <img
-                    src={testimonial.image || "/placeholder.svg"}
+                    src={testimonial.image}
                     alt={testimonial.author}
-                    className="w-full h-full"
+                    className="w-full h-full object-content"
                     onError={(e) => {
                       console.log("Image failed to load:", testimonial.image)
-                      e.currentTarget.src = "/placeholder.svg?height=200&width=200&text=Error"
+                      // Keep the black background if image fails to load
+                      e.currentTarget.style.display = 'none'
                     }}
                     onLoad={() => console.log("Image loaded successfully:", testimonial.image)}
                   />
-                  {/* Subtle overlay for better text readability if needed */}
-                  <div className="absolute inset-0 bg-black bg-opacity-5"></div>
                 </div>
               </div>
             </div>

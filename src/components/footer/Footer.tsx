@@ -10,10 +10,8 @@ export default function Footer() {
             {/* Logo and Country Selector */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-teal-500 rounded-full flex items-center justify-center">
-                  <div className="text-white font-bold text-lg">P</div>
-                </div>
-                <span className="text-lg font-semibold text-gray-900">Propel Connections</span>
+                
+                <img src="/public/assets/logo.png" alt="" />
               </div>
 
               {/* Country Selector */}
