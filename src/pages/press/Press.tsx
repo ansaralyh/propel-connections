@@ -1,13 +1,17 @@
  import React, { useState } from "react";
- const Press = () => {
-   const [openFAQ, setOpenFAQ] = useState<number | null>(null); // No FAQ open by default
+import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
+
+const Press = () => {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(null); // No FAQ open by default
+  const [showWebDevModal, setShowWebDevModal] = useState(false);
 
    const toggleFAQ = (index: number) => {
      setOpenFAQ(openFAQ === index ? null : index);
    };
 
-   return (
-    <div>
+       return (
+     <>
+       <div>
       {/* First Section - Hero */}
       <div className="h-[599px] bg-[#F5F7FAB2] flex items-center justify-center px-4">
         <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 items-center gap-12 h-[599px]">
@@ -475,13 +479,27 @@
            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
              Sign up now and turn your skills into a steady income
            </p>
-           <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200">
-             Find a Professional
-           </button>
+                       <button 
+              onClick={() => setShowWebDevModal(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200"
+            >
+              Find a Professional
+            </button>
          </div>
-       </div>
-     </div>
-   )
- }
+               </div>
+      </div>
+
+      {/* Web Development Modal */}
+      <WebDevelopmentModal
+        isOpen={showWebDevModal}
+        onClose={() => setShowWebDevModal(false)}
+        onContinue={(selection) => {
+          console.log('Selected option:', selection);
+          setShowWebDevModal(false);
+        }}
+      />
+    </>
+  )
+}
 
 export default Press
