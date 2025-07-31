@@ -80,15 +80,15 @@ export default function HowItWorks() {
                   {/* Step Circle */}
                   <div className="relative z-10 mb-8">
                     <div className="relative">
-                      {/* Outer Gray Circle with Bigger Orbit Dots */}
+                      {/* Outer Gray Circle with Smaller Transparent Orbit Dots */}
                       <div className="w-28 h-28 rounded-full border-2 border-gray-300 bg-gray-100 flex items-center justify-center relative">
-                        {/* Bigger Orbit Dots on Left and Right */}
-                        <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gray-400 rounded-full"></div>
-                        <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gray-400 rounded-full"></div>
+                        {/* Smaller Transparent Orbit Dots on Left and Right */}
+                        <div className="absolute -left-1.5 top-1/2 transform -translate-y-1/2 w-3 h-3 border-2 border-gray-400 bg-transparent rounded-full"></div>
+                        <div className="absolute -right-1.5 top-1/2 transform -translate-y-1/2 w-3 h-3 border-2 border-gray-400 bg-transparent rounded-full"></div>
 
-                        {/* Inner Circle with Very Thick Border and Transparent Background */}
+                        {/* Inner Circle with Thinner Border and Transparent Background */}
                         <div
-                          className={`w-20 h-20 rounded-full border-[12px] ${colors.innerRing} bg-transparent flex items-center justify-center`}
+                          className={`w-20 h-20 rounded-full border-[10px] ${colors.innerRing} bg-transparent flex items-center justify-center`}
                         >
                           {/* Step Content */}
                           <div className="text-center">
@@ -120,13 +120,13 @@ export default function HowItWorks() {
                   {/* Step Circle */}
                   <div className="flex-shrink-0">
                     <div className="w-24 h-24 rounded-full border-2 border-gray-300 bg-gray-100 flex items-center justify-center relative">
-                      {/* Bigger Orbit Dots on Left and Right */}
-                      <div className="absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gray-400 rounded-full"></div>
-                      <div className="absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 bg-gray-400 rounded-full"></div>
+                      {/* Smaller Transparent Orbit Dots on Left and Right */}
+                      <div className="absolute -left-1.5 top-1/2 transform -translate-y-1/2 w-3 h-3 border-2 border-gray-400 bg-transparent rounded-full"></div>
+                      <div className="absolute -right-1.5 top-1/2 transform -translate-y-1/2 w-3 h-3 border-2 border-gray-400 bg-transparent rounded-full"></div>
 
-                      {/* Inner Circle with Very Thick Border and Transparent Background */}
+                      {/* Inner Circle with Thinner Border and Transparent Background */}
                       <div
-                        className={`w-16 h-16 rounded-full border-[10px] ${colors.innerRing} bg-transparent flex items-center justify-center`}
+                        className={`w-16 h-16 rounded-full border-[8px] ${colors.innerRing} bg-transparent flex items-center justify-center`}
                       >
                         {/* Step Content */}
                         <div className="text-center">
