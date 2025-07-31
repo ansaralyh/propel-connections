@@ -84,7 +84,7 @@
   }
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border;
   }
@@ -108,4 +108,4 @@
 
 .animate-scroll:hover {
   animation-play-state: paused;
-}
+} */
