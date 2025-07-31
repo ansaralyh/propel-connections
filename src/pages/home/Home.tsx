@@ -1,4 +1,15 @@
 import { Search, MapPin } from "lucide-react"
+import BrandSlider from "../../components/home-components/brandslider/BrandSlider"
+import WhyChooseUs from "../../components/home-components/brandslider/WhyChooseUs"
+import PopularServices from "../../components/home-components/brandslider/PopularService"
+import DiscoverCategories from "../../components/home-components/brandslider/DiscoverCategories"
+import HomeServices from "../../components/home-components/brandslider/HomeServices"
+import Events from "../../components/home-components/brandslider/Events"
+import HealthServices from "../../components/home-components/brandslider/HealthServices"
+import BusinessServices from "../../components/home-components/brandslider/BusinessServices"
+import Professional from "../../components/home-components/brandslider/Professional"
+import HappyClients from "../../components/home-components/brandslider/HappyClients"
+import GetStarted from "../../components/home-components/brandslider/GetStarted"
 
 const Home = () => {
   return (
@@ -77,6 +88,17 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <BrandSlider />
+      <WhyChooseUs />
+      <PopularServices />
+      <DiscoverCategories />
+      <HomeServices />
+      <HealthServices />
+      <Events />
+      <BusinessServices />
+      <Professional />
+      <HappyClients />
+      <GetStarted />
     </div>
   )
 }
