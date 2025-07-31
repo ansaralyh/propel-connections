@@ -1,8 +1,15 @@
-import React from 'react'
+
+import FirstComponent from './careerscomponents/FirstComponent'
+import HowItWorks from './careerscomponents/HowItWorks'
+import WhyJoinUs from './careerscomponents/WhyJoinUs'
 
 const Careers = () => {
   return (
-    <div>Careers</div>
+    <div>
+      <FirstComponent />
+      <WhyJoinUs />
+      <HowItWorks />
+    </div>
   )
 }
 
