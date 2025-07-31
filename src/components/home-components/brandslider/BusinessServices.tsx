@@ -41,16 +41,15 @@ export default function BusinessServices() {
         </div>
 
         {/* Services in horizontal line with decreasing sizes */}
-        <div className="flex gap-6 items-center overflow-y-hidden overflow-x-hidden">
+        <div className="flex gap-8 items-center overflow-y-hidden overflow-x-hidden">
           {/* House Cleaning - Largest */}
           <div className="flex-shrink-0 relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105">
             <div className="w-90 h-100 relative">
               <img
-                src={services[0].image || "/placeholder.svg"}
-                alt={services[0].title}
+                src="/assets/web1.jpg"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
+              <div className="inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <div className="flex justify-between items-end">
                   <div>
@@ -69,13 +68,12 @@ export default function BusinessServices() {
 
           {/* Gardening - Second largest */}
           <div className="flex-shrink-0 relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105">
-            <div className="w-75 h-80 relative">
+            <div className="w-73 h-75 relative">
               <img
-                src={services[1].image || "/placeholder.svg"}
-                alt={services[1].title}
+                src="/assets/cal2.jpg"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
+              <div className="inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="flex justify-between items-end">
                   <div>
@@ -94,13 +92,12 @@ export default function BusinessServices() {
 
           {/* Painting - Third largest */}
           <div className="flex-shrink-0 relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105">
-            <div className="w-65 h-65 relative">
+            <div className="w-63 h-60 relative">
               <img
-                src={services[2].image || "/placeholder.svg"}
-                alt={services[2].title}
+                src="/assets/social.jpg"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
+              <div className="inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="flex justify-between items-end">
                   <div>
@@ -119,13 +116,12 @@ export default function BusinessServices() {
 
           {/* Decorating - Smallest */}
           <div className="flex-shrink-0 relative overflow-hidden rounded-2xl cursor-pointer transition-transform duration-300 hover:scale-105">
-            <div className="w-55 h-50 relative">
+            <div className="w-53 h-50 relative">
               <img
-                src={services[3].image || "/placeholder.svg"}
-                alt={services[3].title}
+                src="/assets/design.jpg"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
+              <div className="inset-0 bg-black bg-opacity-40 hover:bg-opacity-50 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 right-0 p-4">
                 <div className="flex justify-between items-end">
                   <div>

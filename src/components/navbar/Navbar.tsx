@@ -7,14 +7,14 @@ export default function Navbar() {
 
   return (
     <nav className="bg-white border-b border-gray-200 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto pt-6 pb-6">
         <div className="flex items-center justify-between h-16">
           {/* Left Section - Logo and Explore */}
           <div className="flex items-center space-x-6">
             {/* Logo Section - Space reserved for image */}
             <div className="flex items-center space-x-3">
               <div className="w-8 h-8">{/* Space reserved for logo image */}</div>
-              <span className="text-lg font-medium text-gray-900">Propel Connections</span>
+              ,<img src="/assets/logo.png" alt="" />
             </div>
 
             {/* Explore Button */}

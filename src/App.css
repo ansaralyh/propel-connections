@@ -84,28 +84,15 @@
   }
 }
 
-/* @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-
-@keyframes scroll {
+@keyframes brand-scroll {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(calc(-100% / 3));
+    transform: translateX(-100%);
   }
 }
 
-.animate-scroll {
-  animation: scroll 30s linear infinite;
+.brand-scroll {
+  animation: brand-scroll 30s linear infinite;
 }
-
-.animate-scroll:hover {
-  animation-play-state: paused;
-} */
