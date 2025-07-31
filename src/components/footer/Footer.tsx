@@ -1,4 +1,5 @@
 import { ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -10,8 +11,9 @@ export default function Footer() {
             {/* Logo and Country Selector */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
-                
-                <img src="/public/assets/logo.png" alt="" />
+                <Link to="/">
+                  <img src="/public/assets/logo.png" alt="" />
+                </Link>
               </div>
 
               {/* Country Selector */}
@@ -101,14 +103,14 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/careers" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Careers
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/affliates" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Affiliates
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
@@ -116,9 +118,9 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/press" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Press
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
