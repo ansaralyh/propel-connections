@@ -1,13 +1,75 @@
  import React, { useState } from "react";
 import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
+import WebsiteNeedsModal from "../../components/modals/WebsiteNeedsModal";
+import BusinessTypeModal from "../../components/modals/BusinessTypeModal";
+import IndustryModal from "../../components/modals/IndustryModal";
+import TimelineModal from "../../components/modals/TimelineModal";
 
 const Press = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null); // No FAQ open by default
   const [showWebDevModal, setShowWebDevModal] = useState(false);
+  const [showWebsiteNeedsModal, setShowWebsiteNeedsModal] = useState(false);
+  const [showBusinessTypeModal, setShowBusinessTypeModal] = useState(false);
+  const [showIndustryModal, setShowIndustryModal] = useState(false);
+  const [showTimelineModal, setShowTimelineModal] = useState(false);
 
-   const toggleFAQ = (index: number) => {
-     setOpenFAQ(openFAQ === index ? null : index);
-   };
+     const toggleFAQ = (index: number) => {
+    setOpenFAQ(openFAQ === index ? null : index);
+  };
+
+  const handleWebDevContinue = (selection: string) => {
+    console.log('Selected option:', selection);
+    setShowWebDevModal(false);
+  };
+
+  const handleShowWebsiteNeeds = () => {
+    setShowWebDevModal(false);
+    setShowWebsiteNeedsModal(true);
+  };
+
+  const handleWebsiteNeedsContinue = (needs: string[]) => {
+    console.log('Website needs:', needs);
+    setShowWebsiteNeedsModal(false);
+    setShowBusinessTypeModal(true);
+  };
+
+  const handleWebsiteNeedsBack = () => {
+    setShowWebsiteNeedsModal(false);
+    setShowWebDevModal(true);
+  };
+
+  const handleBusinessTypeContinue = (businessType: string) => {
+    console.log('Business type:', businessType);
+    setShowBusinessTypeModal(false);
+    setShowIndustryModal(true);
+  };
+
+  const handleBusinessTypeBack = () => {
+    setShowBusinessTypeModal(false);
+    setShowWebsiteNeedsModal(true);
+  };
+
+  const handleIndustryContinue = (industry: string) => {
+    console.log('Industry:', industry);
+    setShowIndustryModal(false);
+    setShowTimelineModal(true);
+  };
+
+  const handleIndustryBack = () => {
+    setShowIndustryModal(false);
+    setShowBusinessTypeModal(true);
+  };
+
+  const handleTimelineContinue = (timeline: string) => {
+    console.log('Timeline:', timeline);
+    setShowTimelineModal(false);
+    // Here you can handle the final step (Contact Information modal)
+  };
+
+  const handleTimelineBack = () => {
+    setShowTimelineModal(false);
+    setShowIndustryModal(true);
+  };
 
        return (
      <>
@@ -493,10 +555,40 @@ const Press = () => {
       <WebDevelopmentModal
         isOpen={showWebDevModal}
         onClose={() => setShowWebDevModal(false)}
-        onContinue={(selection) => {
-          console.log('Selected option:', selection);
-          setShowWebDevModal(false);
-        }}
+        onContinue={handleWebDevContinue}
+        onShowWebsiteNeeds={handleShowWebsiteNeeds}
+      />
+
+      {/* Website Needs Modal */}
+      <WebsiteNeedsModal
+        isOpen={showWebsiteNeedsModal}
+        onClose={() => setShowWebsiteNeedsModal(false)}
+        onContinue={handleWebsiteNeedsContinue}
+        onBack={handleWebsiteNeedsBack}
+      />
+
+      {/* Business Type Modal */}
+      <BusinessTypeModal
+        isOpen={showBusinessTypeModal}
+        onClose={() => setShowBusinessTypeModal(false)}
+        onContinue={handleBusinessTypeContinue}
+        onBack={handleBusinessTypeBack}
+      />
+
+      {/* Industry Modal */}
+      <IndustryModal
+        isOpen={showIndustryModal}
+        onClose={() => setShowIndustryModal(false)}
+        onContinue={handleIndustryContinue}
+        onBack={handleIndustryBack}
+      />
+
+      {/* Timeline Modal */}
+      <TimelineModal
+        isOpen={showTimelineModal}
+        onClose={() => setShowTimelineModal(false)}
+        onContinue={handleTimelineContinue}
+        onBack={handleTimelineBack}
       />
     </>
   )

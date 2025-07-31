@@ -4,12 +4,14 @@ interface WebDevelopmentModalProps {
   isOpen: boolean;
   onClose: () => void;
   onContinue: (selection: string) => void;
+  onShowWebsiteNeeds: () => void;
 }
 
 const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
   isOpen,
   onClose,
-  onContinue
+  onContinue,
+  onShowWebsiteNeeds
 }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');
 
@@ -103,17 +105,17 @@ const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
               <span className="text-sm font-medium">Back</span>
             </button>
 
-            <button
-              onClick={() => selectedOption && onContinue(selectedOption)}
-              disabled={!selectedOption}
-              className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-                selectedOption
-                  ? 'bg-[#256CF9] text-white hover:bg-blue-700'
-                  : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              }`}
-            >
-              Continue
-            </button>
+                                                           <button
+                    onClick={() => selectedOption && onShowWebsiteNeeds()}
+                    disabled={!selectedOption}
+                    className={`px-8 py-3 rounded-lg font-medium transition-colors ${
+                      selectedOption
+                        ? 'bg-[#256CF9] text-white hover:bg-blue-700'
+                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                    }`}
+                  >
+                    Continue
+                  </button>
           </div>
         </div>
       </div>
