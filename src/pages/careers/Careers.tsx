@@ -1,6 +1,6 @@
 
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import CategoriesJoin from './careerscomponents/CategoriesJoin'
 import FirstComponent from './careerscomponents/FirstComponent'
 import HowItWorks from './careerscomponents/HowItWorks'

@@ -3,14 +3,12 @@ import React, { useState } from 'react';
 interface WebDevelopmentModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onContinue: (selection: string) => void;
   onShowWebsiteNeeds: () => void;
 }
 
 const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
   isOpen,
   onClose,
-  onContinue,
   onShowWebsiteNeeds
 }) => {
   const [selectedOption, setSelectedOption] = useState<string>('');

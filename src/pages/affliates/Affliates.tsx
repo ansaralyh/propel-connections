@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
 import WebsiteNeedsModal from "../../components/modals/WebsiteNeedsModal";
 import BusinessTypeModal from "../../components/modals/BusinessTypeModal";
@@ -15,11 +15,6 @@ const Affliates = () => {
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  const handleWebDevContinue = (selection: string) => {
-    console.log('Selected option:', selection);
-    setShowWebDevModal(false);
   };
 
   const handleShowWebsiteNeeds = () => {
@@ -491,7 +486,6 @@ const Affliates = () => {
       <WebDevelopmentModal
         isOpen={showWebDevModal}
         onClose={() => setShowWebDevModal(false)}
-        onContinue={handleWebDevContinue}
         onShowWebsiteNeeds={handleShowWebsiteNeeds}
       />
 
