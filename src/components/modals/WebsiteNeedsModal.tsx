@@ -14,6 +14,7 @@ const WebsiteNeedsModal: React.FC<WebsiteNeedsModalProps> = ({
   onBack
 }) => {
   const [selectedNeeds, setSelectedNeeds] = useState<string[]>([]);
+  const [otherNeed, setOtherNeed] = useState('');
 
   const websiteNeeds = [
     'To advertise my business/services',
@@ -22,15 +23,25 @@ const WebsiteNeedsModal: React.FC<WebsiteNeedsModalProps> = ({
   ];
 
   const handleNeedToggle = (need: string) => {
-    setSelectedNeeds(prev => 
+    setSelectedNeeds(prev =>
       prev.includes(need)
         ? prev.filter(n => n !== need)
         : [...prev, need]
     );
+
+    // Clear 'other' textarea if "Other" is unchecked
+    if (need === 'Other' && selectedNeeds.includes('Other')) {
+      setOtherNeed('');
+    }
   };
 
   const handleContinue = () => {
-    onContinue(selectedNeeds);
+    let finalNeeds = [...selectedNeeds];
+    if (finalNeeds.includes('Other') && otherNeed.trim() !== '') {
+      finalNeeds = finalNeeds.filter(n => n !== 'Other');
+      finalNeeds.push(otherNeed.trim());
+    }
+    onContinue(finalNeeds);
   };
 
   if (!isOpen) return null;
@@ -78,6 +89,17 @@ const WebsiteNeedsModal: React.FC<WebsiteNeedsModalProps> = ({
                 <span className="text-sm text-gray-700">{need}</span>
               </label>
             ))}
+
+            {/* Show textarea if "Other" is selected */}
+            {selectedNeeds.includes('Other') && (
+              <textarea
+                value={otherNeed}
+                onChange={(e) => setOtherNeed(e.target.value)}
+                placeholder="Please describe your specific needs..."
+                className="mt-2 w-full p-3 border border-gray-300 rounded-md text-sm resize-none focus:ring-blue-500 focus:border-blue-500"
+                rows={3}
+              />
+            )}
           </div>
 
           {/* Action Buttons */}
@@ -90,9 +112,9 @@ const WebsiteNeedsModal: React.FC<WebsiteNeedsModalProps> = ({
             </button>
             <button
               onClick={handleContinue}
-              disabled={selectedNeeds.length === 0}
+              disabled={selectedNeeds.length === 0 || (selectedNeeds.includes('Other') && otherNeed.trim() === '')}
               className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-                selectedNeeds.length > 0
+                selectedNeeds.length > 0 && (!selectedNeeds.includes('Other') || otherNeed.trim() !== '')
                   ? 'bg-[#256CF9] text-white hover:bg-blue-700'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
@@ -106,4 +128,4 @@ const WebsiteNeedsModal: React.FC<WebsiteNeedsModalProps> = ({
   );
 };
 
-export default WebsiteNeedsModal; 
+export default WebsiteNeedsModal;

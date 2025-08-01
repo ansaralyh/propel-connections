@@ -1,69 +1,11 @@
 import { useState } from "react";
-import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
-import WebsiteNeedsModal from "../../components/modals/WebsiteNeedsModal";
-import BusinessTypeModal from "../../components/modals/BusinessTypeModal";
-import IndustryModal from "../../components/modals/IndustryModal";
-import TimelineModal from "../../components/modals/TimelineModal";
+
 
 const Press = () => {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null); // No FAQ open by default
-  const [showWebDevModal, setShowWebDevModal] = useState(false);
-  const [showWebsiteNeedsModal, setShowWebsiteNeedsModal] = useState(false);
-  const [showBusinessTypeModal, setShowBusinessTypeModal] = useState(false);
-  const [showIndustryModal, setShowIndustryModal] = useState(false);
-  const [showTimelineModal, setShowTimelineModal] = useState(false);
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  const handleShowWebsiteNeeds = () => {
-    setShowWebDevModal(false);
-    setShowWebsiteNeedsModal(true);
-  };
-
-  const handleWebsiteNeedsContinue = (needs: string[]) => {
-    console.log("Website needs:", needs);
-    setShowWebsiteNeedsModal(false);
-    setShowBusinessTypeModal(true);
-  };
-
-  const handleWebsiteNeedsBack = () => {
-    setShowWebsiteNeedsModal(false);
-    setShowWebDevModal(true);
-  };
-
-  const handleBusinessTypeContinue = (businessType: string) => {
-    console.log("Business type:", businessType);
-    setShowBusinessTypeModal(false);
-    setShowIndustryModal(true);
-  };
-
-  const handleBusinessTypeBack = () => {
-    setShowBusinessTypeModal(false);
-    setShowWebsiteNeedsModal(true);
-  };
-
-  const handleIndustryContinue = (industry: string) => {
-    console.log("Industry:", industry);
-    setShowIndustryModal(false);
-    setShowTimelineModal(true);
-  };
-
-  const handleIndustryBack = () => {
-    setShowIndustryModal(false);
-    setShowBusinessTypeModal(true);
-  };
-
-  const handleTimelineContinue = (timeline: string) => {
-    console.log("Timeline:", timeline);
-    setShowTimelineModal(false);
-    // Here you can handle the final step (Contact Information modal)
-  };
-
-  const handleTimelineBack = () => {
-    setShowTimelineModal(false);
-    setShowIndustryModal(true);
   };
 
   return (
@@ -238,7 +180,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Rectangle 1661.png"
+                    src="/assets/Rectangle 1661.png"
                     alt="Freelancer Dashboard"
                     className="w-full h-48 object-cover rounded-xl"
                   />
@@ -255,7 +197,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Rectangle 1662.png"
+                    src="/assets/Rectangle 1662.png"
                     alt="Analytics & Insights"
                     className="w-full h-48 object-cover rounded-xl"
                   />
@@ -272,7 +214,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Rectangle 1663.png"
+                    src="/assets/Rectangle 1663.png"
                     alt="Learning Hub"
                     className="w-full h-48 object-cover rounded-xl"
                   />
@@ -289,7 +231,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Rectangle 1664.png"
+                    src="/assets/Rectangle 1664.png"
                     alt="Marketing Tools"
                     className="w-full h-48 object-cover rounded-xl"
                   />
@@ -325,7 +267,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Vector (2).png"
+                    src="/assets/Vector (2).png"
                     alt="No Upfront Fees"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -342,7 +284,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Vector (3).png"
+                    src="/assets/Vector (3).png"
                     alt="Global Client Base"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -359,7 +301,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Vector (4).png"
+                    src="/assets/Vector (4).png"
                     alt="Secure Payments"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -376,7 +318,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/public/assets/Vector (5).png"
+                    src="/assets/Vector (5).png"
                     alt="Growth Opportunities"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -410,7 +352,7 @@ const Press = () => {
                   {/* Profile Image */}
                   <div className="flex-shrink-0">
                     <img
-                      src="/public/assets//360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png"
+                      src="/assets//360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png"
                       alt="Dee"
                       className="w-60 h-60 rounded-xl object-cover"
                     />
@@ -518,11 +460,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 0
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 0
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -557,11 +498,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 1
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 1
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -595,11 +535,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 1
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 1
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -637,11 +576,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 2
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 2
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -676,11 +614,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 3
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 3
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -715,11 +652,10 @@ const Press = () => {
                       How long until we deliver your first blog post?
                     </h3>
                     <svg
-                      className={`w-6 h-6 transition-transform duration-200 ${
-                        openFAQ === 4
+                      className={`w-6 h-6 transition-transform duration-200 ${openFAQ === 4
                           ? "text-green-500 rotate-45"
                           : "text-black"
-                      }`}
+                        }`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -758,7 +694,7 @@ const Press = () => {
               Sign up now and turn your skills into a steady income
             </p>
             <button
-              onClick={() => setShowWebDevModal(true)}
+
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors duration-200"
             >
               Find a Professional
@@ -766,45 +702,6 @@ const Press = () => {
           </div>
         </div>
       </div>
-
-      {/* Web Development Modal */}
-      <WebDevelopmentModal
-        isOpen={showWebDevModal}
-        onClose={() => setShowWebDevModal(false)}
-        onShowWebsiteNeeds={handleShowWebsiteNeeds}
-      />
-
-      {/* Website Needs Modal */}
-      <WebsiteNeedsModal
-        isOpen={showWebsiteNeedsModal}
-        onClose={() => setShowWebsiteNeedsModal(false)}
-        onContinue={handleWebsiteNeedsContinue}
-        onBack={handleWebsiteNeedsBack}
-      />
-
-      {/* Business Type Modal */}
-      <BusinessTypeModal
-        isOpen={showBusinessTypeModal}
-        onClose={() => setShowBusinessTypeModal(false)}
-        onContinue={handleBusinessTypeContinue}
-        onBack={handleBusinessTypeBack}
-      />
-
-      {/* Industry Modal */}
-      <IndustryModal
-        isOpen={showIndustryModal}
-        onClose={() => setShowIndustryModal(false)}
-        onContinue={handleIndustryContinue}
-        onBack={handleIndustryBack}
-      />
-
-      {/* Timeline Modal */}
-      <TimelineModal
-        isOpen={showTimelineModal}
-        onClose={() => setShowTimelineModal(false)}
-        onContinue={handleTimelineContinue}
-        onBack={handleTimelineBack}
-      />
     </>
   );
 };

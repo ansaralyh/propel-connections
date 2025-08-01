@@ -14,6 +14,7 @@ const IndustryModal: React.FC<IndustryModalProps> = ({
   onBack
 }) => {
   const [selectedIndustry, setSelectedIndustry] = useState<string>('');
+  const [otherIndustry, setOtherIndustry] = useState<string>('');
 
   const industries = [
     'Business services',
@@ -25,7 +26,12 @@ const IndustryModal: React.FC<IndustryModalProps> = ({
   ];
 
   const handleContinue = () => {
-    onContinue(selectedIndustry);
+    const finalIndustry =
+      selectedIndustry === 'Other' && otherIndustry.trim()
+        ? otherIndustry.trim()
+        : selectedIndustry;
+
+    onContinue(finalIndustry);
   };
 
   if (!isOpen) return null;
@@ -72,6 +78,17 @@ const IndustryModal: React.FC<IndustryModalProps> = ({
                 <span className="text-sm text-gray-700">{industry}</span>
               </label>
             ))}
+
+            {/* Show textarea if "Other" is selected */}
+            {selectedIndustry === 'Other' && (
+              <textarea
+                value={otherIndustry}
+                onChange={(e) => setOtherIndustry(e.target.value)}
+                placeholder="Please specify your industry..."
+                className="mt-2 w-full p-3 border border-gray-300 rounded-md text-sm resize-none focus:ring-blue-500 focus:border-blue-500"
+                rows={3}
+              />
+            )}
           </div>
 
           {/* Action Buttons */}
@@ -84,9 +101,11 @@ const IndustryModal: React.FC<IndustryModalProps> = ({
             </button>
             <button
               onClick={handleContinue}
-              disabled={!selectedIndustry}
+              disabled={
+                !selectedIndustry || (selectedIndustry === 'Other' && otherIndustry.trim() === '')
+              }
               className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-                selectedIndustry
+                selectedIndustry && (selectedIndustry !== 'Other' || otherIndustry.trim())
                   ? 'bg-[#256CF9] text-white hover:bg-blue-700'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
@@ -100,4 +119,4 @@ const IndustryModal: React.FC<IndustryModalProps> = ({
   );
 };
 
-export default IndustryModal; 
+export default IndustryModal;

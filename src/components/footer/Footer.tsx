@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
                 <Link to="/">
-                  <img src="/public/assets/logo.png" alt="" />
+                  <img src="/assets/logo.png" alt="" />
                 </Link>
               </div>
 

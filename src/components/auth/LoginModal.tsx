@@ -32,7 +32,7 @@ const LoginModal: React.FC<LoginModalProps> = ({ isOpen, onClose }) => {
           {/* Left Panel - Illustration */}
           <div className="w-1/3 bg-gradient-to-br from-blue-50 to-white flex items-center justify-center relative overflow-hidden">
             {/* Security Icons */}
-         <img src="/public/assets/image 3.png" alt="" />
+         <img src="/assets/image 3.png" alt="" />
           </div>
 
           {/* Right Panel - Login Form */}
