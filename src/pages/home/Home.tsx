@@ -10,9 +10,71 @@ import BusinessServices from "../../components/home-components/brandslider/Busin
 import Professional from "../../components/home-components/brandslider/Professional"
 import HappyClients from "../../components/home-components/brandslider/HappyClients"
 import GetStarted from "../../components/home-components/brandslider/GetStarted"
+import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
+import WebsiteNeedsModal from "../../components/modals/WebsiteNeedsModal";
+import BusinessTypeModal from "../../components/modals/BusinessTypeModal";
+import IndustryModal from "../../components/modals/IndustryModal";
+import TimelineModal from "../../components/modals/TimelineModal";
+import { useState } from "react"
+
 
 const Home = () => {
+  const [showWebDevModal, setShowWebDevModal] = useState(false);
+const [showWebsiteNeedsModal, setShowWebsiteNeedsModal] = useState(false);
+const [showBusinessTypeModal, setShowBusinessTypeModal] = useState(false);
+const [showIndustryModal, setShowIndustryModal] = useState(false);
+const [showTimelineModal, setShowTimelineModal] = useState(false);
+
+const handleShowWebsiteNeeds = () => {
+  setShowWebDevModal(false);
+  setShowWebsiteNeedsModal(true);
+};
+
+const handleWebsiteNeedsContinue = (needs: string[]) => {
+  console.log("Website needs:", needs);
+  setShowWebsiteNeedsModal(false);
+  setShowBusinessTypeModal(true);
+};
+
+const handleWebsiteNeedsBack = () => {
+  setShowWebsiteNeedsModal(false);
+  setShowWebDevModal(true);
+};
+
+const handleBusinessTypeContinue = (businessType: string) => {
+  console.log("Business type:", businessType);
+  setShowBusinessTypeModal(false);
+  setShowIndustryModal(true);
+};
+
+const handleBusinessTypeBack = () => {
+  setShowBusinessTypeModal(false);
+  setShowWebsiteNeedsModal(true);
+};
+
+const handleIndustryContinue = (industry: string) => {
+  console.log("Industry:", industry);
+  setShowIndustryModal(false);
+  setShowTimelineModal(true);
+};
+
+const handleIndustryBack = () => {
+  setShowIndustryModal(false);
+  setShowBusinessTypeModal(true);
+};
+
+const handleTimelineContinue = (timeline: string) => {
+  console.log("Timeline:", timeline);
+  setShowTimelineModal(false);
+  // Final step – e.g., open Contact Info Modal (optional)
+};
+
+const handleTimelineBack = () => {
+  setShowTimelineModal(false);
+  setShowIndustryModal(true);
+};
   return (
+    <>
     <div>
       <div className="bg-gray-50 py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -39,6 +101,7 @@ const Home = () => {
                       type="text"
                       placeholder="What service are you looking for"
                       className="w-full pl-12 pr-4 py-4 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-gray-700 bg-white"
+                    onClick={() => setShowWebDevModal(true)} // 👈 Add this
                     />
                   </div>
 
@@ -100,6 +163,40 @@ const Home = () => {
       <HappyClients />
       <GetStarted />
     </div>
+    <WebDevelopmentModal
+  isOpen={showWebDevModal}
+  onClose={() => setShowWebDevModal(false)}
+  onShowWebsiteNeeds={handleShowWebsiteNeeds}
+/>
+
+<WebsiteNeedsModal
+  isOpen={showWebsiteNeedsModal}
+  onClose={() => setShowWebsiteNeedsModal(false)}
+  onContinue={handleWebsiteNeedsContinue}
+  onBack={handleWebsiteNeedsBack}
+/>
+
+<BusinessTypeModal
+  isOpen={showBusinessTypeModal}
+  onClose={() => setShowBusinessTypeModal(false)}
+  onContinue={handleBusinessTypeContinue}
+  onBack={handleBusinessTypeBack}
+/>
+
+<IndustryModal
+  isOpen={showIndustryModal}
+  onClose={() => setShowIndustryModal(false)}
+  onContinue={handleIndustryContinue}
+  onBack={handleIndustryBack}
+/>
+
+<TimelineModal
+  isOpen={showTimelineModal}
+  onClose={() => setShowTimelineModal(false)}
+  onContinue={handleTimelineContinue}
+  onBack={handleTimelineBack}
+/>
+</>
   )
 }
 

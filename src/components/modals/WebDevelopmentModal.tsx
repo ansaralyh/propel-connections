@@ -24,7 +24,7 @@ const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
             <h2 className="text-2xl font-bold">WEB DEVELOPMENT</h2>
             <div className="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center">
               <img 
-                src="/public/assets/Rectangle 1669.png" 
+                src="/assets/Rectangle 1669.png" 
                 alt="Laptop with programming languages" 
                 className="w-12 h-12 object-contain"
               />
@@ -58,7 +58,7 @@ const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
                   <img 
-                    src="/public/assets/Rectangle 1670.png" 
+                    src="/assets/Rectangle 1670.png" 
                     alt="Desktop monitor with web design interface" 
                     className="w-16 h-16 object-contain"
                   />
@@ -79,7 +79,7 @@ const WebDevelopmentModal: React.FC<WebDevelopmentModalProps> = ({
               <div className="text-center">
                 <div className="w-24 h-24 mx-auto mb-4 bg-gray-100 rounded-lg flex items-center justify-center">
                   <img 
-                    src="/public/assets/Rectangle 1670.png" 
+                    src="/assets/Rectangle 1670.png" 
                     alt="Hands interacting with tablet/smartphone" 
                     className="w-16 h-16 object-contain"
                   />

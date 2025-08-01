@@ -14,6 +14,7 @@ const BusinessTypeModal: React.FC<BusinessTypeModalProps> = ({
   onBack
 }) => {
   const [selectedBusinessType, setSelectedBusinessType] = useState<string>('');
+  const [otherBusinessType, setOtherBusinessType] = useState<string>('');
 
   const businessTypes = [
     'Personal project',
@@ -24,7 +25,11 @@ const BusinessTypeModal: React.FC<BusinessTypeModalProps> = ({
   ];
 
   const handleContinue = () => {
-    onContinue(selectedBusinessType);
+    const finalType =
+      selectedBusinessType === 'Other' && otherBusinessType.trim()
+        ? otherBusinessType.trim()
+        : selectedBusinessType;
+    onContinue(finalType);
   };
 
   if (!isOpen) return null;
@@ -71,6 +76,17 @@ const BusinessTypeModal: React.FC<BusinessTypeModalProps> = ({
                 <span className="text-sm text-gray-700">{businessType}</span>
               </label>
             ))}
+
+            {/* If "Other" selected, show input */}
+            {selectedBusinessType === 'Other' && (
+              <textarea
+                value={otherBusinessType}
+                onChange={(e) => setOtherBusinessType(e.target.value)}
+                placeholder="Please describe your business type..."
+                className="mt-2 w-full p-3 border border-gray-300 rounded-md text-sm resize-none focus:ring-blue-500 focus:border-blue-500"
+                rows={3}
+              />
+            )}
           </div>
 
           {/* Action Buttons */}
@@ -83,9 +99,12 @@ const BusinessTypeModal: React.FC<BusinessTypeModalProps> = ({
             </button>
             <button
               onClick={handleContinue}
-              disabled={!selectedBusinessType}
+              disabled={
+                !selectedBusinessType ||
+                (selectedBusinessType === 'Other' && otherBusinessType.trim() === '')
+              }
               className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-                selectedBusinessType
+                selectedBusinessType && (selectedBusinessType !== 'Other' || otherBusinessType.trim())
                   ? 'bg-[#256CF9] text-white hover:bg-blue-700'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
@@ -99,4 +118,4 @@ const BusinessTypeModal: React.FC<BusinessTypeModalProps> = ({
   );
 };
 
-export default BusinessTypeModal; 
+export default BusinessTypeModal;
