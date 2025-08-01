@@ -352,7 +352,7 @@ const Press = () => {
                   {/* Profile Image */}
                   <div className="flex-shrink-0">
                     <img
-                      src="/assets//360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png"
+                      src="/assets/360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png"
                       alt="Dee"
                       className="w-60 h-60 rounded-xl object-cover"
                     />
