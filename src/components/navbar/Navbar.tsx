@@ -1,6 +1,7 @@
 
 import { useState } from "react"
 import { ChevronDown, User } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Navbar() {
   const [isExploreOpen, setIsExploreOpen] = useState(false)
@@ -13,8 +14,7 @@ export default function Navbar() {
           <div className="flex items-center space-x-6">
             {/* Logo Section - Space reserved for image */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8">{/* Space reserved for logo image */}</div>
-              <img src="/assets/logo.png" alt="" />
+              <div className="w-8 h-8"></div>
             </div>
 
             {/* Explore Button */}
@@ -53,10 +53,13 @@ export default function Navbar() {
 
           {/* Right Section - Login and CTA */}
           <div className="flex items-center space-x-4">
-            <button className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition-colors duration-200">
+            <Link 
+              to="/signin"
+              className="flex items-center space-x-2 text-gray-700 hover:text-gray-900 transition-colors duration-200"
+            >
               <User className="w-5 h-5" />
               <span>Login</span>
-            </button>
+            </Link>
 
             <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition-colors duration-200">
               Join as a Professional
