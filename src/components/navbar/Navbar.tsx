@@ -13,6 +13,7 @@ export default function Navbar() {
           {/* Left Section - Logo and Explore */}
           <div className="flex items-center space-x-6">
             {/* Logo Section - Space reserved for image */}
+            <a href="/">
             <div className="flex items-center space-x-3">
 
               <div className="w-8 h-8"></div>
@@ -22,6 +23,7 @@ export default function Navbar() {
 
 
             </div>
+            </a>
 
             {/* Explore Button */}
             <div className="relative">

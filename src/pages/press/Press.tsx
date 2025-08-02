@@ -267,7 +267,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/assets/Vector (2).png"
+                    src="/assets/fluent_feed-20-regular.png"
                     alt="No Upfront Fees"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -284,7 +284,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/assets/Vector (3).png"
+                    src="/assets/carbon_ibm-cloud-vpc-client-vpn.png"
                     alt="Global Client Base"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -301,7 +301,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/assets/Vector (4).png"
+                    src="/assets/streamline_payment-10-solid.png"
                     alt="Secure Payments"
                     className="w-[29px] h-[29px] mx-auto"
                   />
@@ -318,7 +318,7 @@ const Press = () => {
               <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
                 <div className="mb-6">
                   <img
-                    src="/assets/Vector (5).png"
+                    src="/assets/streamline_decent-work-and-economic-growth-solid.png"
                     alt="Growth Opportunities"
                     className="w-[29px] h-[29px] mx-auto"
                   />

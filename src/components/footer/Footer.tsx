@@ -44,12 +44,12 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <a href="/affliates" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       How it works
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <a href="/signin" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Login
                     </a>
                   </li>
@@ -66,7 +66,7 @@ export default function Footer() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">For Professionals</h3>
                 <ul className="space-y-3">
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <a href="/affliates" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       How it works
                     </a>
                   </li>
@@ -76,7 +76,7 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <a href="/careers" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Join as a Professional
                     </a>
                   </li>
