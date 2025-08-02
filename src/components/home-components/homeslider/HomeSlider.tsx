@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 
 const HomeSlider = () => {
@@ -18,27 +18,31 @@ const HomeSlider = () => {
   const services = [
     {
       id: 1,
-      title: "Wedding Photography",
+      title: "Personal Training",
       description: "Lorem ipsum dolor sit amet",
-      image:"/assets/wed.jpg",
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       id: 2,
-      title: "Dj music",
+      title: "Counselling",
       description: "Lorem ipsum dolor sit amet",
-      image:"/assets/dj.jpg",
+      image:
+        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       id: 3,
       title: "Massage Therapy",
       description: "Lorem ipsum dolor sit amet",
-      image:"/assets/card.jpg",
+      image:
+        "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       id: 4,
-      title: "Trip",
+      title: "Health Care",
       description: "Lorem ipsum dolor sit amet",
-      image:"/assets/trip.jpg",
+      image:
+        "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
     },
     {
       id: 5,
@@ -56,11 +60,6 @@ const HomeSlider = () => {
     },
   ];
 
-  // const nextSlide = () => {
-  //   setCurrentIndex((prevIndex) =>
-  //     prevIndex === services.length - 4 ? 0 : prevIndex + 1
-  //   );
-  // };
 
   const handleCardClick = (index: any) => {
     // Navigate to the clicked card's service or perform action
@@ -98,9 +97,9 @@ const HomeSlider = () => {
       <div className="flex justify-between items-start mb-12">
         <div>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Events
+            Health Services
           </h1>
-          <p className="text-lg text-gray-500 max-w-2xl">
+          <p className="text-gray-600 max-w-md">
             Lorem ipsum dolor sit amet consectetur. Sit proin eros ac bibendum
             amet vulputate
           </p>
@@ -131,12 +130,10 @@ const HomeSlider = () => {
               }}
               onClick={() => handleCardClick(index)}>
               <div className="absolute inset-0 p-6 flex flex-col justify-end text-white">
-                <span>
                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
                 <p className="text-sm text-gray-200 mb-4">
                   {service.description}
                 </p>
-                </span>
                 <button
                   className="self-start bg-gray bg-opacity-100 backdrop-blur-lg rounded-full p-2 hover:bg-opacity-30 transition-colors"
                   onClick={(e) => {
