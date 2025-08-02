@@ -12,7 +12,7 @@ const SignIn = () => {
     <div className="min-h-screen bg-gray-100 flex">
       {/* Left Panel - Illustration */}
       <div className="w-1/2 bg-[#F4F9FF] flex items-center justify-center relative p-8">
-       <img src="/public/assets/image 3.png" alt="" className="h-[554px] w-[554px]"/>
+       <img src="/assets/image 3.png" alt="" className="h-[554px] w-[554px]"/>
       </div>
 
       {/* Right Panel - Login Form */}

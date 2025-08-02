@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import WebDevelopmentModal from "../../components/modals/WebDevelopmentModal";
 import WebsiteNeedsModal from "../../components/modals/WebsiteNeedsModal";
 import BusinessTypeModal from "../../components/modals/BusinessTypeModal";
@@ -15,11 +15,6 @@ const Affliates = () => {
 
   const toggleFAQ = (index: number) => {
     setOpenFAQ(openFAQ === index ? null : index);
-  };
-
-  const handleWebDevContinue = (selection: string) => {
-    console.log('Selected option:', selection);
-    setShowWebDevModal(false);
   };
 
   const handleShowWebsiteNeeds = () => {
@@ -98,7 +93,7 @@ const Affliates = () => {
             {/* Main Profile Image */}
             <div className="relative z-10 flex justify-center">
               <img 
-                src="/public/assets/360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png" 
+                src="/assets/360_F_322533850_Lz5JL2K0nVqL48gjCiRLSa2ssxpdfyer-removebg-preview 2.png" 
                 alt="Professional" 
                 className="w-64 h-64 rounded-full object-cover border-4 border-white shadow-lg"
               />
@@ -276,7 +271,7 @@ const Affliates = () => {
             {/* Feature 1 - No Upfront Fees */}
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
               <div className="mb-6">
-                <img src="/public/assets/Vector (2).png" alt="No Upfront Fees" className="w-[29px] h-[29px] mx-auto" />
+                <img src="/assets/Vector (2).png" alt="No Upfront Fees" className="w-[29px] h-[29px] mx-auto" />
               </div>
               <h3 className="text-xl font-bold text-black mb-3">No Upfront Fees</h3>
               <p className="text-gray-600 text-sm">Start for free, pay only when you earn</p>
@@ -285,7 +280,7 @@ const Affliates = () => {
             {/* Feature 2 - Global Client Base */}
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
               <div className="mb-6">
-                <img src="/public/assets/Vector (3).png" alt="Global Client Base" className="w-[29px] h-[29px] mx-auto" />
+                <img src="/assets/Vector (3).png" alt="Global Client Base" className="w-[29px] h-[29px] mx-auto" />
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Global Client Base</h3>
               <p className="text-gray-600 text-sm">Get access to thousands of potential customers</p>
@@ -294,7 +289,7 @@ const Affliates = () => {
             {/* Feature 3 - Secure Payments */}
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
               <div className="mb-6">
-                <img src="/public/assets/Vector (4).png" alt="Secure Payments" className="w-[29px] h-[29px] mx-auto" />
+                <img src="/assets/Vector (4).png" alt="Secure Payments" className="w-[29px] h-[29px] mx-auto" />
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Secure Payments</h3>
               <p className="text-gray-600 text-sm">Guaranteed payouts after successful order completion</p>
@@ -303,7 +298,7 @@ const Affliates = () => {
             {/* Feature 4 - Growth Opportunities */}
             <div className="bg-white p-6 rounded-2xl border border-gray-100 hover:scale-105 hover:shadow-xl transition-all duration-300 cursor-pointer text-center">
               <div className="mb-6">
-                <img src="/public/assets/Vector (5).png" alt="Growth Opportunities" className="w-[29px] h-[29px] mx-auto" />
+                <img src="/assets/Vector (5).png" alt="Growth Opportunities" className="w-[29px] h-[29px] mx-auto" />
               </div>
               <h3 className="text-xl font-bold text-black mb-3">Growth Opportunities</h3>
               <p className="text-gray-600 text-sm">Earn more with experience and top ratings</p>
@@ -491,7 +486,6 @@ const Affliates = () => {
       <WebDevelopmentModal
         isOpen={showWebDevModal}
         onClose={() => setShowWebDevModal(false)}
-        onContinue={handleWebDevContinue}
         onShowWebsiteNeeds={handleShowWebsiteNeeds}
       />
 

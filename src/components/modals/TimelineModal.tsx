@@ -14,6 +14,7 @@ const TimelineModal: React.FC<TimelineModalProps> = ({
   onBack
 }) => {
   const [selectedTimeline, setSelectedTimeline] = useState<string>('');
+  const [otherTimeline, setOtherTimeline] = useState<string>('');
 
   const timelines = [
     'As soon as possible',
@@ -25,7 +26,12 @@ const TimelineModal: React.FC<TimelineModalProps> = ({
   ];
 
   const handleContinue = () => {
-    onContinue(selectedTimeline);
+    const finalTimeline =
+      selectedTimeline === 'Other' && otherTimeline.trim()
+        ? otherTimeline.trim()
+        : selectedTimeline;
+
+    onContinue(finalTimeline);
   };
 
   if (!isOpen) return null;
@@ -72,6 +78,17 @@ const TimelineModal: React.FC<TimelineModalProps> = ({
                 <span className="text-sm text-gray-700">{timeline}</span>
               </label>
             ))}
+
+            {/* Show textarea if "Other" is selected */}
+            {selectedTimeline === 'Other' && (
+              <textarea
+                value={otherTimeline}
+                onChange={(e) => setOtherTimeline(e.target.value)}
+                placeholder="Please specify your timeline..."
+                className="mt-2 w-full p-3 border border-gray-300 rounded-md text-sm resize-none focus:ring-blue-500 focus:border-blue-500"
+                rows={3}
+              />
+            )}
           </div>
 
           {/* Action Buttons */}
@@ -84,9 +101,11 @@ const TimelineModal: React.FC<TimelineModalProps> = ({
             </button>
             <button
               onClick={handleContinue}
-              disabled={!selectedTimeline}
+              disabled={
+                !selectedTimeline || (selectedTimeline === 'Other' && otherTimeline.trim() === '')
+              }
               className={`px-8 py-3 rounded-lg font-medium transition-colors ${
-                selectedTimeline
+                selectedTimeline && (selectedTimeline !== 'Other' || otherTimeline.trim())
                   ? 'bg-[#256CF9] text-white hover:bg-blue-700'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
               }`}
@@ -100,4 +119,4 @@ const TimelineModal: React.FC<TimelineModalProps> = ({
   );
 };
 
-export default TimelineModal; 
+export default TimelineModal;

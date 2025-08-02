@@ -1,4 +1,5 @@
 import { ChevronDown, Facebook, Instagram, Linkedin } from "lucide-react"
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
@@ -10,10 +11,9 @@ export default function Footer() {
             {/* Logo and Country Selector */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-blue-400 to-teal-500 rounded-full flex items-center justify-center">
-                  <div className="text-white font-bold text-lg">P</div>
-                </div>
-                <span className="text-lg font-semibold text-gray-900">Propel Connections</span>
+                <Link to="/">
+                  <img src="/assets/logo.png" alt="" />
+                </Link>
               </div>
 
               {/* Country Selector */}
@@ -103,14 +103,14 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/careers" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Careers
-                    </a>
+                    </Link>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/affliates" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Affiliates
-                    </a>
+                    </Link>
                   </li>
                   <li>
                     <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
@@ -118,9 +118,9 @@ export default function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
+                    <Link to="/press" className="text-gray-600 hover:text-gray-900 transition-colors duration-200">
                       Press
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
