@@ -14,8 +14,12 @@ export default function Navbar() {
           <div className="flex items-center space-x-6">
             {/* Logo Section - Space reserved for image */}
             <div className="flex items-center space-x-3">
+
+              <div className="w-8 h-8"></div>
+
               <div className="w-8 h-8">{/* Space reserved for logo image */}</div>
               <img src="/assets/logo.png" alt="" />
+
 
             </div>
 
